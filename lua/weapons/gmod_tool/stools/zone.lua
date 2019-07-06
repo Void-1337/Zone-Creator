@@ -1,5 +1,5 @@
-TOOL.Category = "Examples"
-TOOL.Name = "Your Tools name"
+TOOL.Category = "Zone Creator"
+TOOL.Name = "Zone Creator"
 TOOL.Command = nil
 TOOL.ConfigName = "" --Setting this means that you do not have to create external configuration files to define the layout of the tool config-hud 
  
@@ -12,29 +12,18 @@ function TOOL:RightClick( trace )
 end
  
 function TOOL.BuildCPanel( panel )
-	panel:AddControl("Header", { Text = "Example TOOL", Description = "Just an little example" })
- 
-	panel:AddControl("CheckBox", {
-	    Label = "A Boolean Value",
-	    Command = "example_bool"
-	})
-	panel:AddControl("Slider", {
-	    Label = "Example Number",
-	    Type = "Float",
-	    Min = "0",
-	    Max = "10000",
-	    Command = "example_number"
-	})
- 
-	panel:AddControl("Color", {
-	    Label = "A Color",
-	    Red = "example_color_r",
-	    Blue = "example_color_b",
-	    Green = "example_color_g",
-	    Alpha = "example_color_a",
-	    ShowHSV = 1,
-	    ShowRGB = 1,
-	    Multiplier = 255 --You can change this to make the rgba values go up to any value
-	})
+	panel:AddControl("Header", { Text = "Waw", Description = "A simple and easy tool to create custom zone" })
+	
+	if(LocalPlayer():IsAdmin()) then
+		panel:AddControl("button", {
+			Label = "Open zone creator menu",
+			Command = "zone_open"
+		})
+	else
+		panel:AddControl("label", {
+			Text = "You don't have permission to use this tool"
+		})
+	end
 end
- 
+
+if SERVER then return end
