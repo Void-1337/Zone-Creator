@@ -1,13 +1,3 @@
---salut mec
-
-
-AddCSLuaFile()
-
-
-DEFINE_BASECLASS( "base_gmodentity" )
-
-PrintTable( ENT )
-
 TOOL.Category = "Examples"
 TOOL.Name = "Your Tools name"
 TOOL.Command = nil
