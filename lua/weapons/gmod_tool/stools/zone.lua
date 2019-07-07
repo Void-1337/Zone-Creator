@@ -1,25 +1,18 @@
 TOOL.Category = "Zone Creator"
-TOOL.Name = "Zone Creator"
-TOOL.Command = nil
-TOOL.ConfigName = "Zone Creator" --Setting this means that you do not have to create external configuration files to define the layout of the tool config-hud 
-
+TOOL.Name = "#tool.zone.name"
 
 TOOL.Information = {
 
 	{ name = "info", stage = 1 },
 	{ name = "left" },
 	{ name = "right" },
-	{ name = "right_use", icon2 = "gui/e.png" },
 	{ name = "reload" },
-	{ name = "reload_use", icon2 = "gui/e.png" },
 
 }
 
 language.Add( "tool.zone.left", "Set the first coner of your zone" )
 language.Add( "tool.zone.right", "Set the opposite coner of your zone" )
 language.Add( "tool.zone.reload", "Create a new zone" )
-language.Add( "tool.zone.right_use", "oui" )
-language.Add( "tool.zone.reload_use", "non" )
 language.Add( "tool.zone.name", "Zone Editor" )
 language.Add( "tool.zone.desc", "A simple and easy tool to create zone" )
 
