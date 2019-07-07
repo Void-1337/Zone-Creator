@@ -15,12 +15,13 @@ TOOL.Information = {
 
 }
 
---language.Add( "tool.zone.name", "Zone Creator Tool" )
---language.Add( "tool.zone.left", "Select an object" )
---language.Add( "tool.zone.right", "" )
---language.Add( "tool.zone.reload", "Select yourself" )
---language.Add( "tool.zone.reload_use", "Hadoken !!!!" )
---language.Add( "tool.zone.desc", "A simple tool to create zone in the game garry's mod" )
+language.Add( "tool.zone.left", "Set the first coner of your zone" )
+language.Add( "tool.zone.right", "Set the opposite coner of your zone" )
+language.Add( "tool.zone.reload", "Create a new zone" )
+language.Add( "tool.zone.right_use", "oui" )
+language.Add( "tool.zone.reload_use", "non" )
+language.Add( "tool.zone.name", "Zone Editor" )
+language.Add( "tool.zone.desc", "A simple and easy tool to create zone" )
 
 local hitpos
 local endpos
@@ -36,13 +37,26 @@ function TOOL:CalcEndPos( trace )
 end
 
 local CalcEndPos = TOOL.CalcEndPos
+
+local phys
  
 function TOOL:LeftClick( trace )
 
 	if not hitpos then
+
 		hitpos = self:CalcEndPos( trace )
+
 	elseif not endpos then
 		endpos = self:CalcEndPos( trace ) - hitpos
+		--if SERVER then
+		--	local button = ents.Create( "ent_zone" )
+		--	if ( !IsValid( button ) ) then return end // Check whether we successfully made an entity, if not - bail
+		--	button:SetPos( hitpos )
+		--	button.Mins = hitpos
+		--	button.Maxs = endpos
+		--	button:Spawn()
+		--end
+		
 	else
 		endpos = nil
 		hitpos = nil
