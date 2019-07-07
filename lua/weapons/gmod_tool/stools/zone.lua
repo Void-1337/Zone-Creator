@@ -22,7 +22,6 @@ TOOL.Information = {
 --language.Add( "tool.zone.reload_use", "Hadoken !!!!" )
 --language.Add( "tool.zone.desc", "A simple tool to create zone in the game garry's mod" )
 
-<<<<<<< HEAD
 local hitpos
 local endpos
 
@@ -48,23 +47,11 @@ function TOOL:LeftClick( trace )
 		endpos = nil
 		hitpos = nil
 	end
-=======
- 
-function TOOL:LeftClick( trace )
-	--if CLIENT then return end
-	PrintTable( trace )
->>>>>>> ce525b8e234b68a5f3019e80769fdd04fc451044
 end
  
 function TOOL:RightClick( trace )
 	--if CLIENT then return end
 	PrintTable( trace )
-<<<<<<< HEAD
-=======
-
-	if SERVER then return end
-	render.DrawWireframeBox( trace.HitPos , Angle( 0 , 0 , 0 ) , trace.HitPos , Entity( 1 ):GetEyeTrace().HitPos , Color( 255, 255, 255 ), false )
->>>>>>> ce525b8e234b68a5f3019e80769fdd04fc451044
 end
  
 function TOOL.BuildCPanel( panel )
@@ -90,7 +77,6 @@ function TOOL.BuildCPanel( panel )
 			Text = "You don't have permission to use this tool"
 		})
 	end
-<<<<<<< HEAD
 end
 
 function TOOL:DrawToolScreen( width, height )
@@ -164,6 +150,3 @@ end
 function TOOL:DrawHUD()
 
 end
-=======
-end
->>>>>>> ce525b8e234b68a5f3019e80769fdd04fc451044
